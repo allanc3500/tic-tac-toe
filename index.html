@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="heading">
+      <h1>Let's Play Tic Tac Toe</h1>
+    </div>
+    <div class="turnContainer">
+      <div id="turn">Welcome to Tic Tac Toe</div>
+    </div>
+    <dialog id="enterName">
+      <div class="instructionText">
+        Enter player names to begin the Tic Tac Toe game.
+      </div>
+      <div class="startBox">
+        <div>
+          <label for="player1">Player 1's Name:</label>
+          <input type="text" id="player1" name="player1" />
+        </div>
+        <div>
+          <label for="player2">Player 2's Name:</label>
+          <input type="text" id="player2" name="player2" />
+        </div>
+        <div>
+          <button id="submit">Submit</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="gameOver">
+      <div class="gameOverContent">
+        <div class="gameOverMessage">
+          <div class="winnerText">Game Over! Play again?</div>
+        </div>
+        <div class="yesAndNo">
+          <button id="yesButton">Yes</button>
+          <button id="noButton">No</button>
+        </div>
+      </div>
+    </dialog>
+    <main></main>
+    <script src="./script.js"></script>
+  </body>
+</html>

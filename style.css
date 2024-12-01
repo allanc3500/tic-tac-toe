@@ -1,0 +1,152 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(21, 176, 248);
+  margin: 0px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  height: 120px;
+}
+
+h1 {
+  color: rgb(208, 215, 10);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.boardDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.boardDiv div {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.boardDiv button {
+  height: 150px;
+  width: 150px;
+  background-color: wheat;
+  font-size: 48px;
+}
+
+#turn {
+  font-size: 48px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.turnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameOver {
+  border-radius: 8px;
+  display: none; /* Initially hidden */
+  position: fixed; /* Position it fixed to the screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.gameOverContent {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  flex-direction: column;
+  background-color: aqua;
+}
+
+.gameOverMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameOverMessage > div {
+  margin-bottom: 70px;
+  font-size: 24px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.yesAndNo button {
+  height: 50px;
+  width: 100px;
+  border-radius: 4px;
+  margin: 10px 20px 10px;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.yesAndNo button:hover {
+  background-color: rgb(44, 173, 44);
+  height: 55px;
+  width: 110px;
+}
+
+.instructionText {
+  margin: 10px;
+}
+
+#noButton:hover {
+  background-color: red;
+}
+
+#enterName {
+  position: fixed; /* Position it fixed to the screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  color: black;
+  background-color: bisque;
+}
+
+.startBox {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.startBox * {
+  margin: 10px;
+}
+
+#submit {
+  height: 50px;
+  width: 100px;
+  border-radius: 4px;
+  cursor: pointer;
+}
