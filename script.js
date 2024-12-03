@@ -1,7 +1,5 @@
-//Task work on Modal/Dialog for the after game over.
-
 const Gameboard = (function () {
-  //Initialize rows, column, board, and HTML elements.
+  //Initialize rows, column, board array, and HTML elements.
   const rows = 3;
   const columns = 3;
   let board = [];
@@ -9,9 +7,10 @@ const Gameboard = (function () {
   const boardDiv = document.createElement("div");
   boardDiv.className = "boardDiv";
 
-  //Function to loop and create a 2D array (3x3). Create the
-  //buttons for the board as well. Add each column to the
-  //buttonDiv and add each buttonDiv to the boardDiv
+  //Function to loop and create a 2D array (3x3) and initialize them with blanks.
+  //During the creation of the 2D array, make buttons to represent each of the
+  //spaces in the tic tac toe board. Append each row of 3 to a div. And after the board
+  //is created, append those buttonDivs to the boardDiv.
   const createBoard = () => {
     for (let i = 0; i < rows; i++) {
       board[i] = [];
@@ -31,10 +30,10 @@ const Gameboard = (function () {
   //Function to display the board
   const displayBoard = () => board;
 
-  //Function to update the board
+  //Function to update the board. Return false if the space
+  //is already taken.
   const updateBoard = (row, col, player) => {
     if (board[col][row] != "_") {
-      console.log("Hi");
       return false;
     }
     board[col][row] = player;
@@ -96,6 +95,7 @@ const Gameboard = (function () {
     }
   };
 
+  //Function to check for tie conditions.
   const checkTie = () => {
     if (
       board[0][0] != "_" &&
@@ -113,11 +113,15 @@ const Gameboard = (function () {
       return false;
     }
   };
+
+  //Function to reset the board back so we don't have duplicate boards or
+  //game data from the last game still remaining.
   const resetBoard = () => {
     boardDiv.innerHTML = "";
     board = [];
   };
-  //Return functiions you want exposed.
+
+  //Return functions you want exposed.
   return {
     createBoard,
     displayBoard,
@@ -222,9 +226,22 @@ function GameController(
   };
 }
 
-function startGame() {
+const startGame = (function () {
   const submitButton = document.querySelector("#submit");
   submitButton.addEventListener("click", () => {
+    if (
+      document.querySelector("#player1").value == "" &&
+      document.querySelector("#player2").value == ""
+    ) {
+      document.querySelector("#player1").value = "Player 1 Name";
+      document.querySelector("#player2").value = "Player 2 Name";
+    } else if (document.querySelector("#player1").value == "") {
+      document.querySelector("#player1").value = "Player 1 Name";
+    } else if (document.querySelector("#player2").value == "") {
+      document.querySelector("#player2").value = "Player 2 Name";
+    } else {
+    }
+
     GameController(
       document.querySelector("#player1").value,
       document.querySelector("#player2").value
@@ -234,13 +251,4 @@ function startGame() {
     const enterNameDialog = document.querySelector("#enterName");
     enterNameDialog.style.display = "none";
   });
-}
-
-startGame();
-//Call game to start. If you don't put arguments to get player
-//names, you will get default values for player names.
-
-//Next step: copy and paste into VS
-
-//don't know why there is a translucent border around it.
-//maybe finish the game first.
+})();
